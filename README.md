@@ -6,4 +6,9 @@ The name I code academy speaks and sound typical of the work they do. iCodeacade
 programming language, gave me the basic tools and knowledge on how to carry on my programmong journey within the space of a week.
  
  Tools 
- Collaboration tools : Slack, Git..
+
+ Collaboration tools : Slack, Git,..
+ 
+ Database Management Tools
+ 
+ Mongodb
