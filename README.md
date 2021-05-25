@@ -11,4 +11,4 @@ programming language, gave me the basic tools and knowledge on how to carry on m
  
  Database Management Tools
  
- Mongodb
+ Mongodb, mySQL 
