@@ -16,3 +16,36 @@ titleCase('a clash of KINGS', 'a an the of') // should return: 'A Clash of Kings
 titleCase('THE WIND IN THE WILLOWS', 'The In') // should return: 'The Wind in the Willows'
 titleCase('the quick brown fox') // should return: 'The Quick Brown Fox'
 */
+
+// Solution : 
+const capitalizeFirstWord = (wordle) => {
+    //state of the first letter in the string
+    newCapitalizeWord = []
+    newCapitalizeWord.push(wordle[0].toUpperCase())
+    //state of the rest on the other string
+    for( index = 1; index < wordle.length; index++){
+    newCapitalizeWord.push(wordle[index])
+    }
+    return newCapitalizeWord.join("")
+  }
+  
+  console.log(capitalizeFirstWord("kilofeshe"))
+  
+  const changeTitleCase = (title, minorWords) => {
+    if(title) {
+      const minorArray = minorWords ? minorWords.split(" ").map(wordle => wordle.toLowerCase()) : [""]
+      titleArray = title.split(" ")      // have an arrray prpotype to tweak
+      finalTitle = []
+      titleArray.map(wordle => {
+        if(minorArray.includes(wordle.toLowerCase())) {
+        finalTitle.push(wordle.toLowerCase())
+        } else {
+        finalTitle.push(capitalizeFirstWord(wordle))
+      }
+    })
+    finalTitle[0] = capitalizeFirstWord(finalTitle[0])
+    return finalTitle
+    } else return title
+  }
+  
+  console.log(changeTitleCase("all things must pass", "nice vibes"))
