@@ -13,7 +13,7 @@ Example
 wave("hello") => ["Hello", "hEllo", "heLlo", "helLo", "hellO"]
 */
 
-// Solution
+// Solution I
 const wave = (spectator) => {
     // Create an empty array to which we will push the words with uppercase letters and we will return this array in end
     spectatorArray = []
@@ -34,3 +34,28 @@ const wave = (spectator) => {
   }
   
   console.log(wave("switch"))
+
+  //Solution II
+const wave = str => 
+[...str].map((s, i) => 
+    str.slice(0, i) + s.toUpperCase() + str.slice(i + 1) 
+).filter(x => x != str);
+
+console.log(wave("forsight"))
+
+// Solution III
+const wave = (str) => {
+    let result = [];
+    str.split("").forEach((char, index) => {
+        if (/[a-z]/.test(char)) {
+            result.push(str.slice(0, index) + char.toUpperCase() + str.slice(index + 1));
+        }
+    });
+    
+    return result;
+}
+
+console.log(wave("contentment"))
+
+// Solution IV
+var wave=w=>[...w].map((a,i)=>w.slice(0,i)+a.toUpperCase()+w.slice(i+1)).filter(a=>a!=w)
