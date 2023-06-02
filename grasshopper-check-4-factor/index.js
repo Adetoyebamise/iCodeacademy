@@ -16,7 +16,7 @@ Note: base is a non-negative number, factor is a positive number.
 */
 
 // solution 1
-const checkForFactor = (base, factor) => {
+const checkForFactorAlpha = (base, factor) => {
     return base % factor === 0
 }
   if (checkForFactor(7, 2) == true) {
@@ -26,7 +26,7 @@ const checkForFactor = (base, factor) => {
   }
 
 // solution 2
-  const checkForFactor = (base , factor) => {
+  const checkForFactorBeta = (base , factor) => {
   return base % factor === 1
   }
   checkForFactor(7,2)
