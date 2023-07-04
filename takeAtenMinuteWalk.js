@@ -32,6 +32,47 @@ function isValidWalk(walk) {
   
   return dt === 10 && dx === 0 && dy === 0
 }
+
+function countDirections(walk) {
+  var count = {
+    n: 0, s: 0, w: 0, e: 0,
+    
+    total: function() {
+      return this.n + this.s + this.w + this.e;
+    },
+    
+    sameStartAndEndPoint: function() {
+      return (this.n === this.s) && (this.w === this.e);
+    }
+  }
+
+  walk.forEach(function(direction) {
+    count[direction]++;
+  });
+  return count;
+}
+
+function isValidWalk(walk) {
+  var count = countDirections(walk);
+  return count.total() === 10 && count.sameStartAndEndPoint();
+}
+
+const returnedToBeginning = ({ n, s, w, e }) =>
+  n === s && w === e
+  
+const getDirections = walk => {
+  const directions = { n: 0, s: 0, w: 0, e: 0 }
+  walk.forEach( key => directions[key]++ )
+  
+  return directions
+}
+
+function isValidWalk(walk) {
+  const directions = getDirections(walk)
+  const returned = returnedToBeginning(directions)
+  
+  return returned && walk.length === 10
+}
 // Test To Passed
 // Walk Validator
 // should return false if walk is too short
